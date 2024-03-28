@@ -1,19 +1,26 @@
-import {LOGO_URL} from '../utils/constants'
+import { LOGO_URL } from '../utils/constants';
+import { Link } from 'react-router-dom';
+
 const Header = () => {
     return (
       <div className="header">
         <div className="logo-container">
-          <img
-            className="logo"
-            src={LOGO_URL}
-          />
+          <img className="logo" src={LOGO_URL} />
         </div>
         <div className="nav-items">
           <ul>
-            <li>Home</li>
-            <li>About Us</li>
-            <li>Contac Us</li>
-            <li>Cart</li>
+            <li>
+              <Link to="/">Home</Link>
+            </li>
+            <li>
+              <Link to="/about">About Us</Link>
+            </li>
+            <li>
+              <Link to="/contact">Contac Us</Link>
+            </li>
+            <li>
+              <Link to="/cart">Cart</Link>
+            </li>
           </ul>
         </div>
       </div>

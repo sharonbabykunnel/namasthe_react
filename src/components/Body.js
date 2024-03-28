@@ -21,14 +21,30 @@ const Body = () => {
         return <h1>loading..</h1>
     }
     return (
-        <div className="body">
-            <div className="filter">
-                <button className="filter-btn" onClick={()=>{setList(list.filter((res)=>res.age>29))}}>Top Rated Restaurants</button>
-            </div>
-            <div className="res-container">
-                {list.map((res,ind) => <ResCard key={res.info.id} resData={res} />)}
-            </div>
+      <div className="body">
+        <div className="search-filter">
+          <div className="search">
+            <input />
+            <button>Search</button>
+          </div>
+          <div className="filter">
+            <button
+              className="filter-btn"
+              onClick={() => {
+                setList(list.filter((res) => res.age > 29));
+              }}
+            >
+              Top Rated Restaurants
+            </button>
+          </div>
         </div>
-    )
+
+        <div className="res-container">
+          {list.map((res, ind) => (
+            <ResCard key={res.info.id} resData={res} />
+          ))}
+        </div>
+      </div>
+    );
 }; 
 export default Body;
