@@ -1,7 +1,12 @@
 import ResCard from "./ResCard";
 import { useState,useEffect } from 'react';
 const Body = () => {
-    const [list, setList] = useState([]);
+  const [list, setList] = useState([]);
+  const [data, setData] = useState('')
+  
+  const handle = (event) => {
+    setData(event.target.value)
+  }
 
     useEffect(() => { fetchData() }, []);
 
@@ -24,7 +29,7 @@ const Body = () => {
       <div className="body">
         <div className="search-filter">
           <div className="search">
-            <input />
+            <input value={data} onChange={handle} />
             <button>Search</button>
           </div>
           <div className="filter">
